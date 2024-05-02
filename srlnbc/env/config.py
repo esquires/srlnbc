@@ -3,26 +3,36 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
+# you can see what safety_gymnasium uses in
+# safety_gymnasium/bases/base_task.py in the self._obstacles information 
+# the particular values are filled throughout via
+# - safety_gymnasium/tasks/safe_navigation/goal/goal_level1.py
+#       extents: how far large the placement space can be
+#       keepout: how far other things need to be
+# see other defaults in
+#   safety_gymnasium/assets/geoms/goal.py (and hazards.py)
+
 point_goal_config = {
-    'robot_base': os.path.join(BASE_DIR, 'xmls/point.xml'),
-    'action_scale': [1.0, 0.05],
-
-    'task': 'goal',
-
-    'lidar_num_bins': 16,
-    'lidar_alias': True,
-
     'constrain_hazards': True,
-    'constrain_indicator': True,
-
-    'hazards_num': 8,
-    'hazards_keepout': 0.4,
-    'hazards_size': 0.2,
-    'hazards_cost': 1.0,
-
-    'goal_keepout': 0.4,
+    'goal_keepout': 0.305,  # 0.305
     'goal_size': 0.3,
-
+    'hazards_keepout': 0.18,  # 0.18
+    'hazards_num': 8,
+    'hazards_size': 0.2,
+    # lidar_max_dist: 3,
+    'lidar_num_bins': 16,
+    # observe_box_lidar: True,
+    # observe_goal_lidar: True,
+    # observe_hazards: True,
+    # observe_vases: True,
+    # placements_extents: [-1.5, -1.5, 1.5, 1.5]
+    'robot_base': os.path.join(BASE_DIR, 'xmls/point.xml'),
+    'action_scale': [1.0, 0.05],  # 1, 1
+    'task': 'goal',
+    'lidar_alias': True,  # not in cfg
+    'constrain_indicator': True,  # not in cfg
+    'hazards_cost': 1.0,  # not in cfg
+    # vases_num: 1,
     '_seed': None
 }
 
