@@ -19,7 +19,7 @@ point_goal_config = {
     'hazards_keepout': 0.18,  # 0.18
     'hazards_num': 8,
     'hazards_size': 0.2,
-    # lidar_max_dist: 3,
+    'lidar_max_dist': 3,
     'lidar_num_bins': 16,
     # observe_box_lidar: True,
     # observe_goal_lidar: True,
