@@ -36,10 +36,10 @@ doggo_goal_config = {
     **point_goal_config,
     'robot_base': 'xmls/doggo.xml',
     'action_scale': 1.0,
-    'hazards_num': 2,
-    'hazards_size': 0.1,
-    'hazards_keepout': 0.5,
-    'goal_keepout': 0.5,
+    # 'hazards_num': 2,
+    # 'hazards_size': 0.1,
+    # 'hazards_keepout': 0.5,
+    # 'goal_keepout': 0.5,
     'sensors_obs': 
         ['accelerometer', 'velocimeter', 'gyro', 'magnetometer'] +
         [
